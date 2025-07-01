@@ -1,10 +1,42 @@
 import Navbar from "@/(components)/Navbar/page";
 import Link from "next/link";
+import Card from "@/(components)/Card/page";
+
+export interface Features {
+  id?: number,
+  name: string,
+  image: string
+}
 
 export default function LandingPage() {
+
+  const featurse: Features[]  =[
+    {
+      id: 1,
+      name: "construction",
+      image: "/constrution.jpg"
+    },
+    {
+      id: 2,
+      name: "designer",
+      image: "/designer.jpg"
+    },
+    {
+      id: 3,
+      name: "interior",
+      image: "/interior.jpg"
+    },
+    {
+      id: 4,
+      name: "staff",
+      image: "/staff.jpg"
+    },
+
+  ]
+
   return (
     <div className="mx-auto w-[1200px]  my-4  px-10 ">
-      <div className="   bg-[url(/house.jpg)] h-[95vh]  w-[100%]   bg-cover  rounded-4xl ">
+      <div className="   bg-[url(/house.jpg)] h-[95vh]  w-[100%]   bg-cover  rounded-4xl mb-15 ">
         <Navbar/>
         <div className="flex justify-center py-40  px-70">
           <div >
@@ -16,6 +48,21 @@ export default function LandingPage() {
           </div> 
         </div>
       </div>
+      <section>
+        <div className="flex justify-center">
+          <h1 className="text-center text-4xl font-semibold max-w-md">Save hours a week with not know</h1>
+        </div>
+        <div className="grid grid-cols-2 gap-10 mx-50 mt-7">
+          
+            {featurse.map((e) =>(
+              <Card key={e.id} name={e.name} image={e.image}/>
+            )) }
+          
+          
+        </div>
+          
+        
+      </section>
 
       
     </div>
