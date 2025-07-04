@@ -1,11 +1,10 @@
 import "./globals.css";
 import { Rubik } from "next/font/google";
 
-
-const rubik = Rubik({ 
-    subsets: ["latin"],
-    variable: '--font-rubik',
- });
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--font-rubik",
+});
 
 export default function RootLayout({
   children,
@@ -14,9 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>
-        {children}
-      </body>
+      <body className={rubik.className}>{children}</body>
     </html>
   );
 }
